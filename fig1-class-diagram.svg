@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" role="img" aria-label="loc.gov 领域对象类图">
+<defs>
+ <marker id="m1a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1f4e79"/></marker>
+ <marker id="m1b" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#7a8b9c"/></marker>
+ <marker id="m1c" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12" fill="none" stroke="#1f4e79" stroke-width="1.4"/></marker>
+</defs>
+<rect x="0" y="0" width="1000" height="800" fill="#ffffff"/>
+<text x="20" y="26" font-size="16" font-weight="bold" fill="#1f4e79" font-family="Microsoft YaHei,Arial">图 1　loc.gov 领域对象类图（BCE 分型 + 聚合关系）</text>
+
+<!-- legend -->
+<g font-family="Microsoft YaHei,Arial" font-size="11.5">
+ <rect x="700" y="10" width="12" height="12" fill="#eaf6f3" stroke="#1f7a76"/><text x="718" y="21" fill="#41556b">边界类 boundary</text>
+ <rect x="820" y="10" width="12" height="12" fill="#fdf1e6" stroke="#b2600f"/><text x="838" y="21" fill="#41556b">控制类 control</text>
+ <rect x="700" y="30" width="12" height="12" fill="#eaf2fb" stroke="#2c6da6"/><text x="718" y="41" fill="#41556b">实体类 entity</text>
+ <text x="838" y="41" fill="#6b7c8f">实线=关联　虚线=依赖</text>
+</g>
+
+<!-- Boundary band -->
+<rect x="20" y="58" width="960" height="132" rx="8" fill="#f3fbf9" stroke="#b8ddd7" stroke-dasharray="5 4"/>
+<text x="34" y="78" font-size="12.5" font-weight="bold" fill="#1f7a76" font-family="Microsoft YaHei,Arial">边界层 · 与外部参与者交互</text>
+<g font-family="Microsoft YaHei,Arial" font-size="11.5" fill="#1b2733">
+ <!-- B1 -->
+ <rect x="38" y="88" width="212" height="86" fill="#eaf6f3" stroke="#1f7a76"/>
+ <line x1="38" y1="112" x2="250" y2="112" stroke="#1f7a76"/><line x1="38" y1="150" x2="250" y2="150" stroke="#1f7a76"/>
+ <text x="46" y="104" font-size="10.5" fill="#1f7a76">«boundary»</text>
+ <text x="46" y="130" font-weight="bold">SearchResultView / ItemView</text>
+ <text x="46" y="166" font-size="10.5" fill="#41556b">+ render(html | json | yaml)</text>
+ <!-- B2 -->
+ <rect x="268" y="88" width="212" height="86" fill="#eaf6f3" stroke="#1f7a76"/>
+ <line x1="268" y1="112" x2="480" y2="112" stroke="#1f7a76"/><line x1="268" y1="150" x2="480" y2="150" stroke="#1f7a76"/>
+ <text x="276" y="104" font-size="10.5" fill="#1f7a76">«boundary»</text>
+ <text x="276" y="130" font-weight="bold">JsonYamlApiEndpoint</text>
+ <text x="276" y="166" font-size="10.5" fill="#41556b">/search /collections /{format}</text>
+ <!-- B3 -->
+ <rect x="498" y="88" width="212" height="86" fill="#eaf6f3" stroke="#1f7a76"/>
+ <line x1="498" y1="112" x2="710" y2="112" stroke="#1f7a76"/><line x1="498" y1="150" x2="710" y2="150" stroke="#1f7a76"/>
+ <text x="506" y="104" font-size="10.5" fill="#1f7a76">«boundary»</text>
+ <text x="506" y="130" font-weight="bold">ItemResourceEndpoint</text>
+ <text x="506" y="166" font-size="10.5" fill="#41556b">/item/{id} /resource/{id}</text>
+ <!-- B4 -->
+ <rect x="728" y="88" width="234" height="86" fill="#eaf6f3" stroke="#1f7a76"/>
+ <line x1="728" y1="112" x2="962" y2="112" stroke="#1f7a76"/><line x1="728" y1="150" x2="962" y2="150" stroke="#1f7a76"/>
+ <text x="736" y="104" font-size="10.5" fill="#1f7a76">«boundary»</text>
+ <text x="736" y="130" font-weight="bold">MediaEndpoints / Sitemap</text>
+ <text x="736" y="166" font-size="10.5" fill="#41556b">IIIF Image · AV · Text · XML</text>
+</g>
+
+<!-- Control band -->
+<rect x="20" y="200" width="960" height="118" rx="8" fill="#fff8f1" stroke="#ecd0ae" stroke-dasharray="5 4"/>
+<text x="34" y="220" font-size="12.5" font-weight="bold" fill="#b2600f" font-family="Microsoft YaHei,Arial">控制层 · 流程编排（不承载领域状态）</text>
+<g font-family="Microsoft YaHei,Arial" font-size="11.5" fill="#1b2733">
+ <rect x="38" y="230" width="176" height="76" fill="#fdf1e6" stroke="#b2600f"/>
+ <line x1="38" y1="254" x2="214" y2="254" stroke="#b2600f"/>
+ <text x="46" y="246" font-size="10.5" fill="#b2600f">«control»</text><text x="46" y="274" font-weight="bold">QueryController</text>
+ <text x="46" y="294" font-size="10.5" fill="#41556b">q/fa/sp/c/sb/at/fo</text>
+ <rect x="228" y="230" width="176" height="76" fill="#fdf1e6" stroke="#b2600f"/>
+ <line x1="228" y1="254" x2="404" y2="254" stroke="#b2600f"/>
+ <text x="236" y="246" font-size="10.5" fill="#b2600f">«control»</text><text x="236" y="274" font-weight="bold">SearchService</text>
+ <text x="236" y="294" font-size="10.5" fill="#41556b">+ search() + facet()</text>
+ <rect x="418" y="230" width="176" height="76" fill="#fdf1e6" stroke="#b2600f"/>
+ <line x1="418" y1="254" x2="594" y2="254" stroke="#b2600f"/>
+ <text x="426" y="246" font-size="10.5" fill="#b2600f">«control»</text><text x="426" y="274" font-weight="bold">ItemAssembler</text>
+ <text x="426" y="294" font-size="10.5" fill="#41556b">+ assemble(item,resources)</text>
+ <rect x="608" y="230" width="176" height="76" fill="#fdf1e6" stroke="#b2600f"/>
+ <line x1="608" y1="254" x2="784" y2="254" stroke="#b2600f"/>
+ <text x="616" y="246" font-size="10.5" fill="#b2600f">«control»</text><text x="616" y="274" font-weight="bold">AccessGuard</text>
+ <text x="616" y="294" font-size="10.5" fill="#41556b">rate limit / rights / 429</text>
+ <rect x="798" y="230" width="164" height="76" fill="#fdf1e6" stroke="#b2600f"/>
+ <line x1="798" y1="254" x2="962" y2="254" stroke="#b2600f"/>
+ <text x="806" y="246" font-size="10.5" fill="#b2600f">«control»</text><text x="806" y="274" font-weight="bold">IngestETL</text>
+ <text x="806" y="294" font-size="10.5" fill="#41556b">extract_timestamp / group</text>
+</g>
+
+<!-- Entity band -->
+<rect x="20" y="328" width="960" height="452" rx="8" fill="#f4f8fd" stroke="#c3d7eb" stroke-dasharray="5 4"/>
+<text x="34" y="348" font-size="12.5" font-weight="bold" fill="#2c6da6" font-family="Microsoft YaHei,Arial">实体层 · 馆藏领域模型（聚合根：Item）</text>
+<g font-family="Microsoft YaHei,Arial" font-size="11.5" fill="#1b2733">
+ <!-- Collection -->
+ <rect x="38" y="360" width="208" height="104" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="38" y1="384" x2="246" y2="384" stroke="#2c6da6"/><line x1="38" y1="428" x2="246" y2="428" stroke="#2c6da6"/>
+ <text x="46" y="378" font-size="10.5" fill="#2c6da6">«entity»</text><text x="46" y="404" font-weight="bold">Collection 集合</text>
+ <text x="46" y="420" font-size="10.5">slug, title, partof, description</text>
+ <text x="46" y="450" font-size="10.5">+ listItems() + facets()</text>
+ <!-- Item -->
+ <rect x="276" y="360" width="248" height="128" fill="#dceafb" stroke="#1f4e79" stroke-width="2"/>
+ <line x1="276" y1="384" x2="524" y2="384" stroke="#1f4e79"/><line x1="276" y1="452" x2="524" y2="452" stroke="#1f4e79"/>
+ <text x="284" y="378" font-size="10.5" fill="#1f4e79">«entity» «aggregate root»</text>
+ <text x="284" y="404" font-weight="bold" font-size="13">Item 条目</text>
+ <text x="284" y="422" font-size="10.5">id(URL), title, date, contributors</text>
+ <text x="284" y="438" font-size="10.5">subjects, language, original_format</text>
+ <text x="284" y="470" font-size="10.5">digitized, access_restricted, rights</text>
+ <!-- SearchResult -->
+ <rect x="554" y="360" width="196" height="104" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="554" y1="384" x2="750" y2="384" stroke="#2c6da6"/><line x1="554" y1="428" x2="750" y2="428" stroke="#2c6da6"/>
+ <text x="562" y="378" font-size="10.5" fill="#2c6da6">«entity» «read model»</text>
+ <text x="562" y="404" font-weight="bold">SearchResult</text>
+ <text x="562" y="420" font-size="10.5">results[], facets[]</text>
+ <text x="562" y="450" font-size="10.5">pagination{}</text>
+ <!-- Resource -->
+ <rect x="770" y="360" width="192" height="128" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="770" y1="384" x2="962" y2="384" stroke="#2c6da6"/><line x1="770" y1="452" x2="962" y2="452" stroke="#2c6da6"/>
+ <text x="778" y="378" font-size="10.5" fill="#2c6da6">«entity»</text><text x="778" y="404" font-weight="bold">Resource 表现</text>
+ <text x="778" y="422" font-size="10.5">id, url, image, pdf, tif</text>
+ <text x="778" y="438" font-size="10.5">info, word_coordinates</text>
+ <text x="778" y="470" font-size="10.5">type, version, duration</text>
+ <!-- Facet -->
+ <rect x="38" y="500" width="208" height="98" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="38" y1="524" x2="246" y2="524" stroke="#2c6da6"/><line x1="38" y1="562" x2="246" y2="562" stroke="#2c6da6"/>
+ <text x="46" y="518" font-size="10.5" fill="#2c6da6">«entity» «value»</text><text x="46" y="544" font-weight="bold">Facet 分面</text>
+ <text x="46" y="580" font-size="10.5">subject / location / dates ...</text>
+ <!-- FacetFilter -->
+ <rect x="276" y="500" width="248" height="98" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="276" y1="524" x2="524" y2="524" stroke="#2c6da6"/><line x1="276" y1="562" x2="524" y2="562" stroke="#2c6da6"/>
+ <text x="284" y="518" font-size="10.5" fill="#2c6da6">«entity» «value»</text><text x="284" y="544" font-weight="bold">FacetFilter 过滤器</text>
+ <text x="284" y="580" font-size="10.5">count, term, title, on(URL), off</text>
+ <!-- Pagination -->
+ <rect x="554" y="500" width="196" height="98" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="554" y1="524" x2="750" y2="524" stroke="#2c6da6"/><line x1="554" y1="562" x2="750" y2="562" stroke="#2c6da6"/>
+ <text x="562" y="518" font-size="10.5" fill="#2c6da6">«entity» «value»</text><text x="562" y="544" font-weight="bold">Pagination</text>
+ <text x="562" y="580" font-size="10.5">from/to/of/current/next/last</text>
+ <!-- Segment -->
+ <rect x="770" y="500" width="192" height="98" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="770" y1="524" x2="962" y2="524" stroke="#2c6da6"/><line x1="770" y1="562" x2="962" y2="562" stroke="#2c6da6"/>
+ <text x="778" y="518" font-size="10.5" fill="#2c6da6">«entity»</text><text x="778" y="544" font-weight="bold">Segment 片段</text>
+ <text x="778" y="580" font-size="10.5">页 / 幅 / 音频分段</text>
+ <!-- DigitalFile -->
+ <rect x="38" y="626" width="208" height="106" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="38" y1="650" x2="246" y2="650" stroke="#2c6da6"/><line x1="38" y1="692" x2="246" y2="692" stroke="#2c6da6"/>
+ <text x="46" y="644" font-size="10.5" fill="#2c6da6">«entity»</text><text x="46" y="670" font-weight="bold">DigitalFile 文件</text>
+ <text x="46" y="686" font-size="10.5">url, mimetype, width/height</text>
+ <text x="46" y="716" font-size="10.5">profile, captions, streams</text>
+ <!-- RightsStatement -->
+ <rect x="276" y="626" width="248" height="106" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="276" y1="650" x2="524" y2="650" stroke="#2c6da6"/><line x1="276" y1="692" x2="524" y2="692" stroke="#2c6da6"/>
+ <text x="284" y="644" font-size="10.5" fill="#2c6da6">«entity»</text><text x="284" y="670" font-weight="bold">RightsStatement 权利声明</text>
+ <text x="284" y="686" font-size="10.5">rights, rights_advisory</text>
+ <text x="284" y="716" font-size="10.5">access_restricted, download_restricted</text>
+ <!-- Authority / vocab -->
+ <rect x="554" y="626" width="196" height="106" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="554" y1="650" x2="750" y2="650" stroke="#2c6da6"/><line x1="554" y1="692" x2="750" y2="692" stroke="#2c6da6"/>
+ <text x="562" y="644" font-size="10.5" fill="#2c6da6">«entity» «value»</text><text x="562" y="670" font-weight="bold">Agent / SubjectHeading</text>
+ <text x="562" y="686" font-size="10.5">LCSH, contributor</text>
+ <text x="562" y="716" font-size="10.5">id.loc.gov 可解析 URI</text>
+ <!-- Citation -->
+ <rect x="770" y="626" width="192" height="106" fill="#eaf2fb" stroke="#2c6da6"/>
+ <line x1="770" y1="650" x2="962" y2="650" stroke="#2c6da6"/><line x1="770" y1="692" x2="962" y2="692" stroke="#2c6da6"/>
+ <text x="778" y="644" font-size="10.5" fill="#2c6da6">«entity»</text><text x="778" y="670" font-weight="bold">Citation 引用</text>
+ <text x="778" y="686" font-size="10.5">Chicago / MLA / APA</text>
+ <text x="778" y="716" font-size="10.5">cite_this（实验性）</text>
+</g>
+
+<!-- associations -->
+<g stroke="#1f4e79" stroke-width="1.4" fill="none" font-family="Microsoft YaHei,Arial" font-size="10.5">
+ <line x1="246" y1="400" x2="276" y2="400" marker-end="url(#m1a)"/>
+ <text x="248" y="392" fill="#1f4e79" stroke="none">1</text><text x="252" y="418" fill="#1f4e79" stroke="none">0..*</text>
+ <polyline points="524,380 540,380 540,350 758,350 758,380 770,380" marker-end="url(#m1a)"/>
+ <text x="548" y="374" fill="#1f4e79" stroke="none">1</text><text x="726" y="374" fill="#1f4e79" stroke="none">0..*</text>
+ <text x="620" y="344" fill="#6b7c8f" stroke="none" font-size="10">resources[] 1..*</text>
+ <line x1="866" y1="488" x2="866" y2="500" marker-end="url(#m1a)"/>
+ <text x="874" y="496" fill="#1f4e79" stroke="none">0..*</text>
+ <polyline points="770,470 755,470 755,612 144,612 144,626" marker-end="url(#m1a)"/>
+ <text x="440" y="608" fill="#6b7c8f" stroke="none" font-size="10">resources[].files[] 1..*</text>
+ <polyline points="962,470 972,470 972,650 962,650" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <text x="836" y="608" fill="#6b7c8f" stroke="none" font-size="10">cite_this（派生）</text>
+ <line x1="400" y1="488" x2="400" y2="500" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <polyline points="300,488 260,488 260,680 276,680" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <text x="150" y="610" fill="#6b7c8f" stroke="none" font-size="10">rights / access 1</text>
+ <line x1="652" y1="464" x2="652" y2="500" marker-end="url(#m1a)"/>
+ <line x1="554" y1="549" x2="524" y2="549" marker-end="url(#m1a)"/>
+ <text x="528" y="542" fill="#6b7c8f" stroke="none" font-size="10">1</text>
+ <line x1="246" y1="549" x2="276" y2="549" marker-end="url(#m1a)"/>
+ <text x="248" y="542" fill="#1f4e79" stroke="none">1</text><text x="256" y="566" fill="#1f4e79" stroke="none">0..*</text>
+ <line x1="400" y1="360" x2="400" y2="318" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="650" y1="360" x2="650" y2="318" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="866" y1="360" x2="866" y2="318" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="144" y1="174" x2="144" y2="230" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="374" y1="174" x2="316" y2="230" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="604" y1="174" x2="506" y2="230" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="845" y1="174" x2="696" y2="230" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+ <line x1="880" y1="306" x2="866" y2="360" stroke-dasharray="5 4" marker-end="url(#m1b)"/>
+</g>
+<g font-family="Microsoft YaHei,Arial" font-size="10.5" fill="#6b7c8f">
+ <text x="30" y="770">注：Item 为聚合根，外部通过 /item/{id} 访问其 Resource；SearchResult 是索引读模型的投影，不是独立持久化实体。</text>
+ <text x="30" y="788">讨论：digitized / access_restricted / display_offsite 等布尔字段应为显式状态枚举，见 4.1 节与图 2。</text>
+</g>
+</svg>

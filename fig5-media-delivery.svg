@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 670" width="1000" height="670" role="img" aria-label="IIIF 媒体与 OCR 交付顺序图">
+<defs>
+ <marker id="m5a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1f4e79"/></marker>
+ <marker id="m5b" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#7a8b9c"/></marker>
+</defs>
+<rect x="0" y="0" width="1000" height="670" fill="#fff"/>
+<text x="20" y="26" font-size="16" font-weight="bold" fill="#1f4e79" font-family="Microsoft YaHei,Arial">图 5　顺序图 B：IIIF 图像 / OCR 词坐标 / HLS 流媒体交付</text>
+<g font-family="Microsoft YaHei,Arial" font-size="10.5" text-anchor="middle">
+ <g fill="#eaf6f3" stroke="#1f7a76">
+  <rect x="12" y="50" width="140" height="46" rx="5"/><rect x="172" y="50" width="140" height="46" rx="5"/>
+ </g>
+ <g fill="#fdf1e6" stroke="#b2600f">
+  <rect x="332" y="50" width="150" height="46" rx="5"/><rect x="502" y="50" width="150" height="46" rx="5"/>
+  <rect x="672" y="50" width="160" height="46" rx="5"/>
+ </g>
+ <rect x="852" y="50" width="136" height="46" rx="5" fill="#eaf2fb" stroke="#2c6da6"/>
+ <g fill="#1b2733" font-weight="bold">
+  <text x="82" y="70">查看器 /</text><text x="82" y="88">客户端应用</text>
+  <text x="242" y="70">边缘缓存</text><text x="242" y="88">CDN</text>
+  <text x="407" y="70">«boundary»</text><text x="407" y="88">IIIF Image Service</text>
+  <text x="577" y="70">«boundary»</text><text x="577" y="88">Text / OCR Service</text>
+  <text x="752" y="70">«boundary»</text><text x="752" y="88">Streaming / HLS</text>
+  <text x="920" y="70">«entity»</text><text x="920" y="88">Object Storage</text>
+ </g>
+</g>
+<g stroke="#9fb2c4" stroke-width="1.1" stroke-dasharray="5 5">
+ <line x1="82" y1="96" x2="82" y2="596"/><line x1="242" y1="96" x2="242" y2="596"/>
+ <line x1="407" y1="96" x2="407" y2="596"/><line x1="577" y1="96" x2="577" y2="596"/>
+ <line x1="752" y1="96" x2="752" y2="596"/><line x1="920" y1="96" x2="920" y2="596"/>
+</g>
+<!-- frames -->
+<rect x="16" y="112" width="966" height="290" fill="none" stroke="#8a97a6" stroke-width="1.1" stroke-dasharray="6 4"/>
+<text x="24" y="130" font-family="Microsoft YaHei,Arial" font-size="10.5" font-weight="bold" fill="#1f7a76">loop　按需取图（region / size / rotation 全在 URI 中）</text>
+<rect x="16" y="414" width="966" height="82" fill="none" stroke="#8a97a6" stroke-width="1.1" stroke-dasharray="6 4"/>
+<text x="24" y="432" font-family="Microsoft YaHei,Arial" font-size="10.5" font-weight="bold" fill="#b2600f">opt　全文检索命中高亮</text>
+<rect x="16" y="508" width="966" height="82" fill="none" stroke="#8a97a6" stroke-width="1.1" stroke-dasharray="6 4"/>
+<text x="24" y="526" font-family="Microsoft YaHei,Arial" font-size="10.5" font-weight="bold" fill="#b2600f">opt　音视频资源</text>
+<g font-family="Microsoft YaHei,Arial" font-size="10.3" fill="#1b2733" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">
+ <g stroke="#1f4e79" stroke-width="1.4" marker-end="url(#m5a)">
+  <line x1="82" y1="152" x2="407" y2="152"/>
+  <line x1="82" y1="208" x2="242" y2="208"/>
+  <line x1="242" y1="264" x2="407" y2="264"/>
+  <line x1="407" y1="292" x2="920" y2="292"/>
+  <line x1="407" y1="348" x2="242" y2="348"/>
+  <line x1="82" y1="458" x2="577" y2="458"/>
+  <line x1="82" y1="552" x2="752" y2="552"/>
+ </g>
+ <g stroke="#7a8b9c" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#m5b)">
+  <line x1="407" y1="180" x2="82" y2="180"/>
+  <line x1="242" y1="236" x2="82" y2="236"/>
+  <line x1="920" y1="320" x2="407" y2="320"/>
+  <line x1="242" y1="376" x2="82" y2="376"/>
+  <line x1="577" y1="486" x2="82" y2="486"/>
+  <line x1="752" y1="580" x2="82" y2="580"/>
+ </g>
+ <text x="90" y="146">1 GET /image-services/iiif/{id}/info.json</text>
+ <text x="90" y="174">2 info.json：width / height / profile / 支持的变换（旋转仅 90° 倍数）</text>
+ <text x="90" y="202">3 GET …/pct:25,15,50,45/pct:5/0/default.jpg</text>
+ <text x="90" y="230">4 [缓存命中] 直接返回</text>
+ <text x="250" y="258">5 [未命中] 回源请求</text>
+ <text x="415" y="286">6 读取主文件 / 预生成派生（tile.loc.gov/storage-services）</text>
+ <text x="600" y="314">7 图像字节</text>
+ <text x="250" y="342">8 变换后 JPEG（缓存键 = 完整 URI）</text>
+ <text x="90" y="370">9 渲染缩略图 / 缩放 / 裁剪</text>
+ <text x="90" y="452">10 GET /text-services/word-coordinates-service?segment=…&amp;format=alto_xml&amp;q=…&amp;relevant_snippet=1</text>
+ <text x="90" y="480">11 coords / full_text / searchTerms（在图像上高亮命中词）</text>
+ <text x="90" y="546">12 GET /streaming-services/iiif/…/full/,720/0/full/default.m3u8</text>
+ <text x="90" y="574">13 Master Playlist + 分片 + 按需 DFXP→WebVTT 字幕</text>
+</g>
+<g font-family="Microsoft YaHei,Arial" font-size="10.5" fill="#6b7c8f">
+ <text x="20" y="622">课程对照：A5 可缓存 URI（官方明确说明「参数放在路径而非查询串，便于服务端或标准 Web 缓存基础设施缓存」）；A6 服务按媒体能力自治限流。</text>
+ <text x="20" y="646">交互特征：<tspan font-weight="bold">客户端编排</tspan>——查看器自行组合 info.json、图像、OCR、字幕四个独立服务，主应用不做服务端聚合。</text>
+</g>
+</svg>
